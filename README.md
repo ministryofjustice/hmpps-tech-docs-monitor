@@ -8,7 +8,7 @@ It's specifically designed to run against the hmpps-tech-docs but I guess it cou
 
 GitHub Actions will run the script once a day during weekdays.
 
-It will look at the pages API for each site in the doc-list.json, find all pages that have expired, and post a Slack message that it needs reviewing.
+It will look at the pages API for each site in the doc-list.json, find all pages that have expired, and post a Slack message that it needs reviewing.. something like this:
 
 ![image](https://user-images.githubusercontent.com/26419401/165932087-27d50763-3491-45b8-b597-1f3f53bebabb.png)
 
@@ -16,33 +16,39 @@ It will look at the pages API for each site in the doc-list.json, find all pages
 ## How can I use this service? 
 
 Usage is simple, you will need to: 
-- update your documentation as per the example below
-- submit a PR to enable the notifier.
-
-### Example GitHub Pages Configuration 
+- update your documentation (as per [hmpps-tech-docs](https://github.com/ministryofjustice/hmpps-tech-docs)) to generate a `pages.json` that contains the following information for each page:
 
 ```
----
-title: Team Tools
-reviewed: 2021-04-28
-reviewIn: 3 months
----
-...
+    {
+      "title": "Alerts",
+      "url": "/common-kotlin-patterns/alerts/",
+      "reviewed": "Wed Sep 17 2025 00:00:00 GMT+0000 (Coordinated Universal Time)",
+      "reviewIn": "6 months",
+      "reviewAgain": "2026-03-17"
+    }, 
 ```
+
+which was generated from the original documents file like this:
+```
+---
+layout: sub-navigation
+title: Alerts
+order: 8
+reviewed: 2025-09-17
+eleventyNavigation:
+  key: Alerts
+  parent: Kotlin API patterns
+---
+```
+
+- Add the URL to `page-list.json`
+- submit a PR.
+
+At the moment, only one webhook is in use, but you never know what's possible.
 
 ⚠️ The `reviewed` field should be updated via Pull Request when a review is complete.
 
 
 * `SLACK_WEBHOOK_URL`: The Slack webhook URL to allow messages to be posted.
-* `REALLY_POST_TO_SLACK`: Messages will only be posted to Slack if the value of
-  this var is `1`.
+* `MAX_DOCS`: The maximum number of documents to show (defaults to 10 - 0 will list all overdue docs).
 
-#### Slack message customisation
-
-This is the default Slack message when pages expire:
-
-![default-message-example](docs/images/default-message-example.png)
-
-## Licence
-
-The gem is available as open source under the terms of the [MIT License](LICENCE).

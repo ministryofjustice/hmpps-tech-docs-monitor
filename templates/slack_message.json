@@ -4,7 +4,7 @@
 			"type": "section",
 			"text": {
 				"type": "mrkdwn",
-				"text": ":daniel-the-manual-spaniel: Hello. :paw_prints: This is your friendly manual spaniel. I've found xx pages overdue for review."
+				"text": "This will be replaced by the Python script."
 			}
 		},
 		{
@@ -21,7 +21,7 @@
 			"type": "section",
 			"text": {
 				"type": "mrkdwn",
-				"text": ""
+				"text": "Justified Ancients of Mu Mu"
 			}
 		}
 	]

@@ -16,7 +16,7 @@ log = logging.getLogger(__name__)
 
 max_docs = os.getenv('MAX_DOCS', 10)
 try:
-  log.info(f'Max docs to be returned: {max_docs}')
+  log.info(f'Max docs to be returned: {int(max_docs)}')
 except Exception:
   log.error(f'max_docs ({max_docs}) needs to be an integer (or 0) - cannot continue')
   sys.exit(1)
