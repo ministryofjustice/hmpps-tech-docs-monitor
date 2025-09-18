@@ -1,0 +1,28 @@
+{
+	"blocks": [
+		{
+			"type": "section",
+			"text": {
+				"type": "mrkdwn",
+				"text": ":daniel-the-manual-spaniel: Hello. :paw_prints: This is your friendly manual spaniel. I've found xx pages overdue for review."
+			}
+		},
+		{
+			"type": "section",
+			"text": {
+				"type": "mrkdwn",
+				"text": "Here are the top 10 oldest:"
+			}
+		},
+		{
+			"type": "divider"
+		},
+		{
+			"type": "section",
+			"text": {
+				"type": "mrkdwn",
+				"text": ""
+			}
+		}
+	]
+}

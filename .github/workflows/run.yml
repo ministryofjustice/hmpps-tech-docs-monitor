@@ -1,0 +1,29 @@
+on:
+  schedule:
+    - cron: '25 09 * * 1-5'  # 09:25 UTC, Monday to Friday
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  daniel_the_manual_spaniel:
+    runs-on: [self-hosted, hmpps-github-actions-runner]
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - name: Install dependencies
+        shell: bash
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - run: python check-and-notify.py
+        env:
+          MAX_PAGES: ${{ vars.MAX_PAGES }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
