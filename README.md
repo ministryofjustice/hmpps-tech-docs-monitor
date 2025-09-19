@@ -2,7 +2,7 @@
 
 # Tech Docs Template - Page Expiry Notifier
 
-This repository was [forked](https://github.com/ministryofjustice/tech-docs-monitor) from ministryofjustice/tech-docs-monitor
+This repository is loosely based on [ministryofjustice/tech-docs-monitor](https://github.com/ministryofjustice/tech-docs-monitor), re-written in Python for convenience.
 
 It's specifically designed to run against the hmpps-tech-docs but I guess it could be extended to others...
 
