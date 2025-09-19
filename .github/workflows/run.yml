@@ -8,7 +8,8 @@ permissions:
   contents: read
 
 jobs:
-  daniel_the_manual_spaniel:
+  rocco_the_docco_quokka:
+    name: Rocco the Docco Quokka
     runs-on: [self-hosted, hmpps-github-actions-runner]
 
     steps:
@@ -26,5 +27,5 @@ jobs:
 
       - run: python check-and-notify.py
         env:
-          MAX_PAGES: ${{ vars.MAX_PAGES }}
+          MAX_DOCS: ${{ vars.MAX_DOCS }}
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
