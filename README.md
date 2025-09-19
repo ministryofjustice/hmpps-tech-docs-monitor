@@ -8,10 +8,9 @@ It's specifically designed to run against the hmpps-tech-docs but I guess it cou
 
 GitHub Actions will run the script once a day during weekdays.
 
-It will look at the pages API for each site in the doc-list.json, find all pages that have expired, and post a Slack message that it needs reviewing.. something like this (but with a quokka instead)
+It will look at the pages API for each site in the doc-list.json, find all pages that have expired, and post a Slack message that it needs reviewing.. something like this:
 
-![image](https://user-images.githubusercontent.com/26419401/165932087-27d50763-3491-45b8-b597-1f3f53bebabb.png)
-
+<img width="665" height="160" alt="image" src="https://github.com/user-attachments/assets/306cd063-11ee-44e4-849e-7eb00dc370e7" />
 
 ## How can I use this service? 
 
