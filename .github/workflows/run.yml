@@ -1,7 +1,8 @@
+name: Scheduled document expiry check
 on:
+  workflow_dispatch:
   schedule:
     - cron: '25 09 * * 1-5'  # 09:25 UTC, Monday to Friday
-  workflow_dispatch:
 
 permissions:
   contents: read

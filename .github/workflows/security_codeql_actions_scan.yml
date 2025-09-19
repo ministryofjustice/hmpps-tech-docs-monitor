@@ -1,4 +1,4 @@
-name: Security CodeQL actions scan
+name: Security CodeQL Actions scan
 on:
   workflow_dispatch:
   schedule:
