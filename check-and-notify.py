@@ -89,7 +89,7 @@ def build_slack_message(overdue_docs, pages_url):
   # The slack template needs to have blocks as follows:
   # - the first block contains the message title in a text field,
   # - the second block contains the heading of the list
-  # - the penultimate block contains the list of the documents
+  # - the fourth block contains the list of the documents
   # - the last block contains the URL for the github tech docs monitor
   if slack_message_template := get_json(slack_template_filename):
     header_text = f":rocco-docco-quokka: Hello. :paw_prints: This is Rocco, your friendly docco quokka. I've found {len(overdue_docs)} page{('s' if len(overdue_docs) != 1 else '')} overdue for review."
@@ -103,7 +103,7 @@ def build_slack_message(overdue_docs, pages_url):
     try:
       slack_message_template['blocks'][0]['text']['text'] = header_text
       slack_message_template['blocks'][1]['text']['text'] = list_heading_text
-      slack_message_template['blocks'][-2]['text']['text'] = list_text
+      slack_message_template['blocks'][3]['text']['text'] = list_text
     except Exception as e:
       log.warning(f"Couldn't build Slack message from template - {e}")
       return None
