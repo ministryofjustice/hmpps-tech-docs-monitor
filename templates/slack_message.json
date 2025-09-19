@@ -23,6 +23,16 @@
 				"type": "mrkdwn",
 				"text": "Justified Ancients of Mu Mu"
 			}
+		},
+		{
+			"type": "divider"
+		},
+		{
+			"type": "section",
+			"text": {
+				"type": "mrkdwn",
+				"text": "_Rocco lives in the <https://github.com/ministryofjustice/hmpps-tech-docs-monitor|hmpps-tech-docs-monitor>._\n"
+			}
 		}
 	]
 }
