@@ -91,7 +91,7 @@ def build_slack_message(overdue_docs, pages_url):
   # - the second block containing the heading of the list
   # - the last block containing the list of the documents
   if slack_message_template := get_json(slack_template_filename):
-    header_text = f":daniel-the-manual-spaniel: Hello. :paw_prints: This is your friendly manual spaniel. I've found {len(overdue_docs)} page{('s' if len(overdue_docs) != 1 else '')} overdue for review."
+    header_text = f":rocco-docco-quokka: Hello. :paw_prints: This is Rocco, your friendly docco quokka. I've found {len(overdue_docs)} page{('s' if len(overdue_docs) != 1 else '')} overdue for review."
     max_docs_int = int(max_docs)
     list_heading_text = f'Here {("is the full list:" if (max_docs_int == 0 or len(overdue_docs) <= max_docs_int) else f"are the top {max_docs_int} oldest:")}'
     list_text = ''
